@@ -30,8 +30,6 @@
    Node MCU GND - GND
 */
 
-// Fan pin is 7
-
 #include <DHT.h>
 #include <Wire.h>
 
@@ -102,10 +100,6 @@ void setup(void) {
   Wire.begin(8);
   Wire.onReceive(receiveEvent);
   Wire.onRequest(requestEvent);
-
-  //   digitalWrite(fanPin, LOW); works
-  // analogWrite(pumpPin,0); works
-  // digitalWrite(heaterPin,LOW); works
 }
 
 void loop(void) {

@@ -73,6 +73,8 @@ void loop(void) {
 
   if (cropId[0] == '0') { // user has not logged in and has therefore has not selected a crop
     Serial.println("Returning from loop function..");
+    cropId[0];
+    return;
   }
 
   Wire.beginTransmission(8);
@@ -135,9 +137,6 @@ void loop(void) {
       isHeaterOn = true;
     }
   }
-  Serial.println(temperature);
-  Serial.println(moisture);
-  Serial.println(sunlight);
 
   char temperatureData[200];
   sprintf(temperatureData, "{\"msg\" : %c%c }", temperature[0], temperature[1]);
